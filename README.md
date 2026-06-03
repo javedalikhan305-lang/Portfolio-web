@@ -59,7 +59,7 @@ Check out the live portfolio here: [Your Portfolio URL](https://your-portfolio-l
 ## 💡 How to Run Locally
 1. Clone the repo:
 ```bash
-git clone https://github.com/intikhabaalam/portfolio.git
+git clone https://github.com/javedalikhan305-lang/Portfolio-web.git
 
 Navigate to project folder:
 
