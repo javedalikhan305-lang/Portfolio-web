@@ -2,30 +2,36 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiDownload } from 'react-icons/fi';
 
-const Hero = () => {
-  // 🔴 YAHAN APNA RESUME PDF KA LINK LAGAO
-  const resumeUrl = 'Intikhab_Aalam_Resume_SinglePage_Paragraphs.pdf';  // ✅ Public folder ka link
+const resumeUrl = '/Javed_Khan_Resume.pdf';
 
+const Hero = () => {
   const handleResumeClick = (e) => {
     e.preventDefault();
     window.open(resumeUrl, '_blank');
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-b from-gray-900 to-gray-800">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center pt-16"
+      style={{ background: 'linear-gradient(to bottom, #0c0a06, #1a1400)' }}
+    >
       <div className="container mx-auto px-6 text-center">
-        {/* Profile Image with Animation */}
+
+        {/* Profile Image */}
         <motion.div
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ duration: 0.8, type: "spring" }}
           className="relative w-36 h-36 mx-auto mb-6"
         >
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 blur-xl opacity-50"></div>
-          <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-blue-500/30">
-            <img 
-              src="https://static.vecteezy.com/system/resources/previews/054/122/266/non_2x/a-cheerful-character-sitting-at-a-laptop-representing-productivity-and-creativity-png.png" 
-              alt="Intikhab Aalam"
+          <div className="absolute inset-0 rounded-full opacity-50"
+            style={{ background: 'radial-gradient(circle, #d4af37, #8b6914)', filter: 'blur(16px)' }} />
+          <div className="relative w-full h-full rounded-full overflow-hidden"
+            style={{ border: '4px solid rgba(212,175,55,0.35)' }}>
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/054/122/266/non_2x/a-cheerful-character-sitting-at-a-laptop-representing-productivity-and-creativity-png.png"
+              alt="Javed Khan"
               className="w-full h-full object-cover"
             />
           </div>
@@ -37,18 +43,31 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
           className="text-4xl md:text-5xl font-bold mb-4"
+          style={{ color: '#f5f0e0' }}
         >
-          Hi, I'm <span className="text-blue-400">Intikhab Aalam</span>
+          Hi, I'm{' '}
+          <span style={{
+            background: 'linear-gradient(90deg, #d4af37, #f5c842)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}>
+            Javed Khan
+          </span>
         </motion.h1>
 
-        {/* Title with Badge */}
+        {/* Title Badge */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3 }}
           className="flex justify-center mb-6"
         >
-          <span className="px-4 py-2 bg-blue-500/10 rounded-full border border-blue-500/30 text-blue-400">
+          <span className="px-4 py-2 rounded-full text-sm font-medium"
+            style={{
+              background: 'rgba(212,175,55,0.08)',
+              border: '1px solid rgba(212,175,55,0.3)',
+              color: '#d4af37'
+            }}>
             🚀 MERN Full Stack Developer
           </span>
         </motion.div>
@@ -58,10 +77,11 @@ const Hero = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-gray-400 max-w-2xl mx-auto mb-8"
+          className="max-w-2xl mx-auto mb-8 leading-relaxed"
+          style={{ color: '#7a6e58' }}
         >
-          Passionate about building full-stack web applications with MongoDB, Express.js, React, and Node.js. 
-          Looking for my first opportunity in web development.
+          Passionate about building full-stack web applications with MongoDB, Express.js,
+          React, and Node.js. Looking for my first opportunity in web development.
         </motion.p>
 
         {/* Social Links */}
@@ -71,28 +91,26 @@ const Hero = () => {
           transition={{ delay: 0.5 }}
           className="flex justify-center gap-4 mb-8"
         >
-          <a 
-            href="https://github.com/intikhabaalam" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-2xl text-gray-400 hover:text-white bg-gray-800 p-3 rounded-full border border-gray-700 hover:border-blue-500 transition-all"
-          >
-            <FiGithub />
-          </a>
-          <a 
-            href="https://linkedin.com/in/intikhab-aalam-138863248" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-2xl text-gray-400 hover:text-blue-400 bg-gray-800 p-3 rounded-full border border-gray-700 hover:border-blue-500 transition-all"
-          >
-            <FiLinkedin />
-          </a>
-          <a 
-            href="mailto:intikhabrehmani@gmail.com" 
-            className="text-2xl text-gray-400 hover:text-red-400 bg-gray-800 p-3 rounded-full border border-gray-700 hover:border-blue-500 transition-all"
-          >
-            <FiMail />
-          </a>
+          <a href="https://github.com/javedalikhan305-lang" target="_blank" rel="noopener noreferrer"
+            className="text-2xl p-3 rounded-full transition-all duration-200"
+            style={{ color: '#7a6e58', background: 'rgba(212,175,55,0.05)', border: '1px solid rgba(212,175,55,0.15)' }}
+            onMouseEnter={e => { e.currentTarget.style.color = '#d4af37'; e.currentTarget.style.borderColor = 'rgba(212,175,55,0.5)'; }}
+            onMouseLeave={e => { e.currentTarget.style.color = '#7a6e58'; e.currentTarget.style.borderColor = 'rgba(212,175,55,0.15)'; }}
+          ><FiGithub /></a>
+
+          <a href="https://www.linkedin.com/in/javedkhan01/" target="_blank" rel="noopener noreferrer"
+            className="text-2xl p-3 rounded-full transition-all duration-200"
+            style={{ color: '#7a6e58', background: 'rgba(212,175,55,0.05)', border: '1px solid rgba(212,175,55,0.15)' }}
+            onMouseEnter={e => { e.currentTarget.style.color = '#d4af37'; e.currentTarget.style.borderColor = 'rgba(212,175,55,0.5)'; }}
+            onMouseLeave={e => { e.currentTarget.style.color = '#7a6e58'; e.currentTarget.style.borderColor = 'rgba(212,175,55,0.15)'; }}
+          ><FiLinkedin /></a>
+
+          <a href="mailto:intikhabrehmani@gmail.com"
+            className="text-2xl p-3 rounded-full transition-all duration-200"
+            style={{ color: '#7a6e58', background: 'rgba(212,175,55,0.05)', border: '1px solid rgba(212,175,55,0.15)' }}
+            onMouseEnter={e => { e.currentTarget.style.color = '#d4af37'; e.currentTarget.style.borderColor = 'rgba(212,175,55,0.5)'; }}
+            onMouseLeave={e => { e.currentTarget.style.color = '#7a6e58'; e.currentTarget.style.borderColor = 'rgba(212,175,55,0.15)'; }}
+          ><FiMail /></a>
         </motion.div>
 
         {/* CTA Buttons */}
@@ -102,17 +120,18 @@ const Hero = () => {
           transition={{ delay: 0.6 }}
           className="flex flex-col sm:flex-row justify-center gap-4"
         >
-          <a
-            href="#projects"
-            className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/30 transition-all"
+          <a href="#projects"
+            className="px-8 py-3 rounded-lg font-semibold transition-all hover:opacity-90"
+            style={{ background: 'linear-gradient(135deg, #d4af37, #b8860b)', color: '#1a1200' }}
           >
             View Projects
           </a>
-          
-          {/* 🔴 RESUME BUTTON - AB CLICK KARTE HI PDF KHULEGI */}
-          <button
-            onClick={handleResumeClick}
-            className="px-8 py-3 border-2 border-blue-500 rounded-lg font-semibold hover:bg-blue-500/10 transition-all flex items-center justify-center gap-2"
+
+          <button onClick={handleResumeClick}
+            className="px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all"
+            style={{ border: '2px solid #d4af37', color: '#d4af37', background: 'transparent' }}
+            onMouseEnter={e => e.currentTarget.style.background = 'rgba(212,175,55,0.1)'}
+            onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
           >
             <FiDownload /> Resume
           </button>
@@ -128,11 +147,13 @@ const Hero = () => {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
-            className="w-5 h-9 border-2 border-gray-600 rounded-full flex justify-center"
+            className="w-5 h-9 rounded-full flex justify-center"
+            style={{ border: '2px solid rgba(212,175,55,0.3)' }}
           >
-            <div className="w-1 h-2 bg-blue-500 rounded-full mt-2"></div>
+            <div className="w-1 h-2 rounded-full mt-2" style={{ background: '#d4af37' }} />
           </motion.div>
         </motion.div>
+
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 # My Portfolio
 
 ## 🚀 About Me
-Hi! I'm **Intikhab Aalam**, a passionate **Full Stack / MERN Stack Developer**.  
+Hi! I'm **javed khan**, a passionate **Full Stack / MERN Stack Developer**.  
 I build responsive, interactive, and user-friendly web applications using **JavaScript, ReactJS, Node.js, and Tailwind CSS**.
 
 - 🌱 Currently learning: Advanced React patterns, backend optimization

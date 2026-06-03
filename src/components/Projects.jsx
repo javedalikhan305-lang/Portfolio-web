@@ -1,196 +1,225 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { FiGithub, FiExternalLink } from 'react-icons/fi';
+// ===========================
+// LUXURY PROJECTS SECTION
+// Black + Gold Theme
+// ===========================
+
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
-  const [selectedProject, setSelectedProject] = useState(null);
-const projects = [
-  {
-    title: 'Food Ordering Website',
-    description: 'Food ordering website where users can book tables, order food, and contact restaurants. Admin manages all bookings and orders.',
-    tech: [ 'MongoDB', 'React.js','Express.js', 'JavaScript', 'Tailwind CSS', 'Node.js','postMain','Redux'],  // ✅ MERN Stack
-   features: [
-    '👤 User Features:',
-    '  • Table booking & reservation',
-    '  • Order food for delivery/pickup',
-    '  • Pre-order for table',
-    '  • Contact restaurant directly',
-    '  • View booking & order history',
-    '  • Track order status',
-    '',
-    '👑 Admin Features:',
-    '  • Manage all table bookings',
-    '  • Manage food orders',
-    '  • Update booking/order status',
-    '  • Restaurant menu management',
-    '  • Customer details management',
-    '',
-    '🔐 Additional:',
-    '  • User authentication',
-    '  • Payment integration (Razorpay)',
-    '  • Booking confirmation',
-    '  • Table availability calendar'
-    ],
-    github: 'https://github.com/intikhabaalam/food-app',
-    live: 'https://mr-hotel.onrender.com/',
-    image: '/mr-hotel image.png'
-  },
-  {
-    title: 'EduVerse',
-    description: 'College campus platform where students can buy/sell old items, and admins can create & manage college events.',
-    tech: ['React.js', 'JavaScript', 'Tailwind CSS', 'MongoDB', 'Express.js', 'Node.js','postMain','Redux'],  // ✅ MERN Stack
-     features: [
-      '👤 User Features:',
-      '  • Buy & sell old items (books, electronics, stationery)',
-      '  • Product listing with images & price',
-      '  • Chat with buyers/sellers',
-      '  • User reviews & ratings',
-      '',
-      '👑 Admin Features:',
-      '  • Create & manage college events',
-      '  • Event calendar with reminders',
-      '  • Student announcements',
-      '  • User management & verification',
-      '',
-      '🔐 Authentication:',
-      '  • Student registration (college email verification)',
-      '  • Secure login with JWT',
-      '  • Role-based access (Admin/Student)'
-    ],
-    github: 'https://github.com/intikhabaalam/eduverse',
-    live: 'https://eduverse-1-xfw3.onrender.com/',
-    image: '/eduverse image.png'
-  },
-  {
-    title: 'AI Helper',
-    description: 'AI-powered assistant that helps with various tasks using OpenAI API.',
-    tech: ['React.js', 'JavaScript', 'Tailwind CSS', 'OpenAI API'],  // ✅ Frontend + API
-    features: [
-      'Chat interface',
-      'Code generation',
-      'Text summarization',
-      'Content writing',
-      'Language translation',
-      'Multi-turn conversations'
-    ],
-    github: 'https://github.com/intikhabaalam/ai-helper',
-    live: 'https://ai-helper-dusky.vercel.app/',
-    image: '/ai-helper image.png'
-  },
-  {
-    title: 'Kal Tak News',
-    description: 'Real-time news aggregator with category filtering and personalized news feed.',
-    tech: ['React.js', 'JavaScript', 'Tailwind CSS', 'News API'],  // ✅ Frontend + API
-    features: [
-      'Breaking news',
-      'Category filters',
-      'Search functionality',
-      'Bookmark articles',
-      'Share options',
-      'Dark/light mode'
-    ],
-    github: 'https://github.com/intikhabaalam/kal-tak',
-    live: 'https://kal-tak-ehc2.vercel.app/',
-    image: '/kal-tak image.png'
-  },
-  {
-    title: 'Pokemon Game',
-    description: 'Interactive Pokemon card game where users can battle with different Pokemon.',
-    tech: ['React.js', 'JavaScript', 'Tailwind CSS', 'Pokemon API', 'Framer Motion'],  // ✅ Frontend + API
-    features: [
-      'Pokemon cards',
-      'Battle system',
-      'Score tracking',
-      'Animations',
-      'Sound effects',
-      'Mobile responsive'
-    ],
-    github: 'https://github.com/intikhabaalam/poke-game',
-    live: 'https://poke-game-dun.vercel.app/',
-    image: '/poke image.png'
-  }
-];
+  const projects = [
+    {
+      title: "Kriptos - Anonymous Community Board",
+      description:
+        "Anonymous community platform where users can post, react, and comment while maintaining privacy.",
+      tech: [
+        "MongoDB",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "Redux",
+        "Tailwind CSS",
+      ],
+      features: [
+        "Anonymous posting system",
+        "JWT Authentication",
+        "Role-based access",
+        "Comments & Reactions",
+        "Content moderation",
+        "Responsive UI",
+      ],
+      github:
+        "https://github.com/javedalikhan305-lang/anonymous-community-board.git",
+      live: "https://anonymous-community-board.onrender.com/",
+      image: "/kriptos.png",
+    },
+
+    {
+      title: "ImaginX - Social Media Platform",
+      description:
+        "Modern social media platform with posts, likes, comments and user interaction.",
+      tech: [
+        "MongoDB",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "Redux",
+        "Tailwind CSS",
+      ],
+      features: [
+        "Create Posts",
+        "Like & Comment",
+        "JWT Authentication",
+        "Profile Management",
+        "Responsive Design",
+        "Real-time UI",
+      ],
+      github:
+        "https://github.com/javedalikhan305-lang/Social-media-platform.git",
+      live: "https://social-media-platform-1-enmx.onrender.com",
+      image: "/imaginx.png",
+    },
+
+    {
+      title: "AI Helper",
+      description:
+        "AI-powered assistant that helps users with coding, writing and productivity tasks.",
+      tech: ["React.js", "Tailwind CSS", "OpenAI API", "JavaScript"],
+      features: [
+        "Chat Interface",
+        "Code Generation",
+        "Text Summarization",
+        "Content Writing",
+        "Language Translation",
+      ],
+      github: "https://github.com/intikhabaalam/ai-helper",
+      live: "https://ai-helper-dusky.vercel.app/",
+      image: "/ai-helper image.png",
+    },
+
+    {
+      title: "Kal Tak News",
+      description:
+        "Real-time news platform with category filtering and search functionality.",
+      tech: ["React.js", "Tailwind CSS", "News API", "JavaScript"],
+      features: [
+        "Breaking News",
+        "Search News",
+        "Bookmark Articles",
+        "Category Filters",
+        "Dark Mode",
+      ],
+      github: "https://github.com/intikhabaalam/kal-tak",
+      live: "https://kal-tak-ehc2.vercel.app/",
+      image: "/kal-tak image.png",
+    },
+  ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-800/30">
+    <section
+      id="projects"
+      className="py-24"
+      style={{
+        background: "#0f0f0f",
+      }}
+    >
       <div className="container mx-auto px-6">
+
+        {/* Heading */}
         <motion.h2
           ref={ref}
-          initial={{ y: 30, opacity: 0 }}
-          animate={inView ? { y: 0, opacity: 1 } : {}}
-          className="text-3xl md:text-4xl font-bold text-center mb-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          className="text-4xl md:text-5xl font-bold text-center mb-4"
+          style={{ color: "#fff" }}
         >
-          My <span className="text-blue-400">Projects</span>
+          My <span style={{ color: "#d4af37" }}>Projects</span>
         </motion.h2>
 
         <motion.p
-          initial={{ y: 30, opacity: 0 }}
-          animate={inView ? { y: 0, opacity: 1 } : {}}
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.1 }}
-          className="text-center text-gray-400 mb-12"
+          className="text-center mb-16"
+          style={{ color: "#b8b8b8" }}
         >
-          Here are some of my MERN stack projects
+          Here are some of my featured MERN stack projects.
         </motion.p>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.2 + index * 0.1 }}
-              className="bg-gray-800/50 rounded-lg overflow-hidden border border-gray-700 hover:border-blue-500 transition-all"
+              transition={{ delay: index * 0.15 }}
+              whileHover={{ y: -8 }}
+              className="overflow-hidden rounded-2xl"
+              style={{
+                background: "#1a1a1a",
+                border: "1px solid rgba(212,175,55,0.2)",
+              }}
             >
-              <img 
-                src={project.image} 
+              <img
+                src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-56 object-cover"
               />
-              
+
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.slice(0, 4).map(t => (
-                    <span key={t} className="px-2 py-1 text-xs bg-gray-700 rounded">
-                      {t}
+                <h3
+                  className="text-2xl font-bold mb-3"
+                  style={{ color: "#fff" }}
+                >
+                  {project.title}
+                </h3>
+
+                <p
+                  className="mb-5"
+                  style={{ color: "#b8b8b8" }}
+                >
+                  {project.description}
+                </p>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 rounded-full text-sm"
+                      style={{
+                        background:
+                          "rgba(212,175,55,0.12)",
+                        color: "#d4af37",
+                        border:
+                          "1px solid rgba(212,175,55,0.2)",
+                      }}
+                    >
+                      {tech}
                     </span>
                   ))}
-                  {project.tech.length > 4 && (
-                    <span className="px-2 py-1 text-xs bg-gray-700 rounded">
-                      +{project.tech.length - 4}
-                    </span>
-                  )}
                 </div>
 
-                <div className="flex gap-4">
-                  <a 
+                {/* Buttons */}
+                <div className="flex items-center gap-5">
+                  <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+                    className="flex items-center gap-2 transition-all"
+                    style={{ color: "#b8b8b8" }}
                   >
-                    <FiGithub /> Code
+                    <FiGithub />
+                    Code
                   </a>
-                  <a 
+
+                  <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+                    className="flex items-center gap-2"
+                    style={{ color: "#d4af37" }}
                   >
-                    <FiExternalLink /> Demo
+                    <FiExternalLink />
+                    Demo
                   </a>
+
                   <button
-                    onClick={() => setSelectedProject(project)}
-                    className="ml-auto text-blue-400 hover:text-blue-300"
+                    onClick={() =>
+                      setSelectedProject(project)
+                    }
+                    className="ml-auto font-medium"
+                    style={{ color: "#d4af37" }}
                   >
                     Details →
                   </button>
@@ -201,65 +230,103 @@ const projects = [
         </div>
       </div>
 
-      {/* Project Modal */}
+      {/* Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80">
-          <div className="bg-gray-800 rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-6">
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold text-blue-400">{selectedProject.title}</h3>
-                <button 
-                  onClick={() => setSelectedProject(null)}
-                  className="text-gray-400 hover:text-white text-xl"
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{
+            background: "rgba(0,0,0,0.9)",
+          }}
+        >
+          <div
+            className="max-w-3xl w-full rounded-2xl overflow-hidden"
+            style={{
+              background: "#1a1a1a",
+              border:
+                "1px solid rgba(212,175,55,0.2)",
+            }}
+          >
+            <img
+              src={selectedProject.image}
+              alt={selectedProject.title}
+              className="w-full h-64 object-cover"
+            />
+
+            <div className="p-8">
+              <div className="flex justify-between mb-6">
+                <h3
+                  className="text-3xl font-bold"
+                  style={{ color: "#d4af37" }}
+                >
+                  {selectedProject.title}
+                </h3>
+
+                <button
+                  onClick={() =>
+                    setSelectedProject(null)
+                  }
+                  className="text-2xl"
+                  style={{ color: "#fff" }}
                 >
                   ✕
                 </button>
               </div>
 
-              <img 
-                src={selectedProject.image} 
-                alt={selectedProject.title}
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
+              <p
+                className="mb-6"
+                style={{ color: "#c0c0c0" }}
+              >
+                {selectedProject.description}
+              </p>
 
-              <p className="text-gray-300 mb-4">{selectedProject.description}</p>
+              <h4
+                className="font-bold mb-3"
+                style={{ color: "#fff" }}
+              >
+                Features
+              </h4>
 
-              <div className="mb-4">
-                <h4 className="font-semibold mb-2">Technologies:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.tech.map(t => (
-                    <span key={t} className="px-3 py-1 bg-gray-700 rounded-full text-sm">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <h4 className="font-semibold mb-2">Key Features:</h4>
-                <ul className="list-disc list-inside text-gray-400 space-y-1">
-                  {selectedProject.features.map((f, i) => (
-                    <li key={i}>{f}</li>
-                  ))}
-                </ul>
-              </div>
+              <ul
+                className="space-y-2 mb-8"
+                style={{ color: "#b8b8b8" }}
+              >
+                {selectedProject.features.map(
+                  (feature, i) => (
+                    <li key={i}>
+                      • {feature}
+                    </li>
+                  )
+                )}
+              </ul>
 
               <div className="flex gap-4">
-                <a 
+                <a
                   href={selectedProject.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition-colors"
+                  className="px-5 py-3 rounded-lg flex items-center gap-2"
+                  style={{
+                    background: "#2a2a2a",
+                    color: "#fff",
+                  }}
                 >
-                  <FiGithub /> View Code
+                  <FiGithub />
+                  View Code
                 </a>
-                <a 
+
+                <a
                   href={selectedProject.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-blue-500 rounded hover:bg-blue-600 transition-colors"
+                  className="px-5 py-3 rounded-lg flex items-center gap-2"
+                  style={{
+                    background: "#d4af37",
+                    color: "#000",
+                    fontWeight: "600",
+                  }}
                 >
-                  <FiExternalLink /> Live Demo
+                  <FiExternalLink />
+                  Live Demo
                 </a>
               </div>
             </div>

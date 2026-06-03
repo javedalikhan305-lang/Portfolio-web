@@ -1,45 +1,111 @@
-import React from 'react';
-import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import React from "react";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 border-t border-gray-800 py-8">
+    <footer
+      className="py-8"
+      style={{
+        background: "#0c0a06",
+        borderTop: "1px solid rgba(212,175,55,0.2)",
+      }}
+    >
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
+          
           {/* Logo */}
-          <div className="mb-4 md:mb-0">
-            <span className="text-xl font-bold text-blue-400">MERN</span>
-            <span className="text-green-400">Fresher</span>
+          <div className="mb-4 md:mb-0 text-xl font-bold">
+            <span style={{ color: "#f5f0e0" }}>
+              Javed
+            </span>{" "}
+            <span style={{ color: "#d4af37" }}>
+              Khan
+            </span>
           </div>
 
           {/* Quick Links */}
-          <div className="flex gap-6 mb-4 md:mb-0">
-            <a href="#home" className="text-gray-400 hover:text-white text-sm">Home</a>
-            <a href="#about" className="text-gray-400 hover:text-white text-sm">About</a>
-            <a href="#skills" className="text-gray-400 hover:text-white text-sm">Skills</a>
-            <a href="#projects" className="text-gray-400 hover:text-white text-sm">Projects</a>
-            <a href="#contact" className="text-gray-400 hover:text-white text-sm">Contact</a>
+          <div className="flex gap-6 mb-4 md:mb-0 flex-wrap justify-center">
+            {["Home", "About", "Skills", "Projects", "Contact"].map(
+              (item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="text-sm transition-all duration-300"
+                  style={{ color: "#a89b84" }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.color = "#d4af37")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.color = "#a89b84")
+                  }
+                >
+                  {item}
+                </a>
+              )
+            )}
           </div>
 
           {/* Social Icons */}
-          <div className="flex gap-4">
-            <a href="https://github.com/intikhabaalam" target="_blank" className="text-gray-400 hover:text-white">
-              <FiGithub size={18} />
+          <div className="flex gap-5">
+            <a
+              href="https://github.com/javedalikhan305-lang"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:scale-110"
+              style={{ color: "#a89b84" }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.color = "#d4af37")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.color = "#a89b84")
+              }
+            >
+              <FiGithub size={20} />
             </a>
-            <a href="https://linkedin.com/in/intikhab-aalam-138863248" target="_blank" className="text-gray-400 hover:text-blue-400">
-              <FiLinkedin size={18} />
+
+            <a
+              href="https://www.linkedin.com/in/javedkhan01/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:scale-110"
+              style={{ color: "#a89b84" }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.color = "#d4af37")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.color = "#a89b84")
+              }
+            >
+              <FiLinkedin size={20} />
             </a>
-            <a href="mailto:intikhabrehmani@gmail.com" className="text-gray-400 hover:text-red-400">
-              <FiMail size={18} />
+
+            <a
+              href="mailto:javedalikhan305@gmail.com"
+              className="transition-all duration-300 hover:scale-110"
+              style={{ color: "#a89b84" }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.color = "#d4af37")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.color = "#a89b84")
+              }
+            >
+              <FiMail size={20} />
             </a>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="text-center text-gray-500 text-sm mt-6">
-          © {currentYear} Intikhab Aalam. All rights reserved.
+        <div
+          className="text-center text-sm mt-6 pt-6"
+          style={{
+            color: "#7a6e58",
+            borderTop: "1px solid rgba(212,175,55,0.1)",
+          }}
+        >
+          © {currentYear} Javed Khan. All Rights Reserved.
         </div>
       </div>
     </footer>

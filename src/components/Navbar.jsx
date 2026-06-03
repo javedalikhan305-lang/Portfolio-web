@@ -10,6 +10,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -20,15 +21,30 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-gray-900/90 backdrop-blur-lg shadow-lg' : 'bg-transparent'
-      }`}
+      className="fixed w-full z-50 transition-all duration-300"
+      style={{
+        background: scrolled
+          ? 'rgba(12,10,6,0.95)'
+          : 'transparent',
+        backdropFilter: scrolled ? 'blur(12px)' : 'none',
+        boxShadow: scrolled
+          ? '0 4px 20px rgba(212,175,55,0.15)'
+          : 'none',
+      }}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
+
           {/* Logo */}
-          <a href="#home" className="text-2xl font-bold text-blue-400">
-            Intikhab<span className="text-green-400">Aalam</span>
+          <a
+            href="#home"
+            className="text-2xl font-bold"
+            style={{ color: '#f5f0e0' }}
+          >
+            Javed{' '}
+            <span style={{ color: '#d4af37' }}>
+              Khan
+            </span>
           </a>
 
           {/* Desktop Menu */}
@@ -37,16 +53,26 @@ const Navbar = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-gray-300 hover:text-white transition-colors"
+                className="transition-all duration-300"
+                style={{
+                  color: '#7a6e58',
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = '#d4af37')
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = '#7a6e58')
+                }
               >
                 {item}
               </a>
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Button */}
           <button
-            className="md:hidden text-2xl text-white"
+            className="md:hidden text-3xl"
+            style={{ color: '#d4af37' }}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <HiX /> : <HiMenu />}
@@ -55,13 +81,26 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden pt-4 pb-2 space-y-2">
+          <div
+            className="md:hidden mt-4 rounded-lg p-4"
+            style={{
+              background: 'rgba(26,20,0,0.95)',
+              border: '1px solid rgba(212,175,55,0.2)',
+            }}
+          >
             {navItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="block py-2 text-gray-300 hover:text-white"
+                className="block py-3 transition-colors"
+                style={{ color: '#7a6e58' }}
                 onClick={() => setIsOpen(false)}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = '#d4af37')
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = '#7a6e58')
+                }
               >
                 {item}
               </a>
