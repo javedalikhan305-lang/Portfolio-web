@@ -6,7 +6,7 @@ I build responsive, interactive, and user-friendly web applications using **Java
 
 - 🌱 Currently learning: Advanced React patterns, backend optimization
 - 💻 Looking for: Full-time web development opportunities
-- 📫 Reach me at: [intikhabrehmani@gmail.com](mailto:intikhabrehmani@gmail.com) | [LinkedIn](https://www.linkedin.com/in/intikhab-aalam-138863248/) | [GitHub](https://github.com/intikhabaalam)
+- 📫 Reach me at: [intikhabrehmani@gmail.com](mailto:javedalikhan305@gmail.com) | [LinkedIn](https://www.linkedin.com/in/javedkhan01/) | [GitHub](https://github.com/javedalikhan305-lang)
 
 ---
 
